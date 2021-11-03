@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get '/', to: 'users#index'
   get '/users/:id', to: 'users#show'
