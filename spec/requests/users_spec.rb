@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 describe 'Users GET #index', type: :request do
-  
   it 'return true if display' do
     get '/'
     expect((response)).to have_http_status(:success)
@@ -21,7 +20,6 @@ describe 'Users GET #index', type: :request do
 end
 
 describe 'Users GET #show', type: :request do
-  
   it 'return true if display' do
     get '/users/1'
     expect((response)).to have_http_status(:success)
