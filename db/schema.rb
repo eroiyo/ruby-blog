@@ -10,21 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_134505) do
+ActiveRecord::Schema.define(version: 2021_11_05_114956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.text "text"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "posts_id", null: false
+    t.index ["posts_id"], name: "index_comments_on_posts_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "posts_id", null: false
+    t.bigint "users_id", null: false
+    t.index ["posts_id"], name: "index_likes_on_posts_id"
+    t.index ["users_id"], name: "index_likes_on_users_id"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.integer "author_id"
     t.string "title"
     t.text "text"
     t.integer "comments_counter"
-    t.string "integer"
     t.integer "likes_counter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +52,14 @@ ActiveRecord::Schema.define(version: 2021_11_04_134505) do
     t.integer "post_counter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "comments_id", null: false
+    t.index ["comments_id"], name: "index_users_on_comments_id"
   end
 
+  add_foreign_key "comments", "posts", column: "posts_id"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "posts", column: "posts_id"
+  add_foreign_key "likes", "users", column: "users_id"
+  add_foreign_key "posts", "users"
+  add_foreign_key "users", "comments", column: "comments_id"
 end
