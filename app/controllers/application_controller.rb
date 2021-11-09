@@ -2,6 +2,6 @@
 
 class ApplicationController < ActionController::Base
   def current_user
-    users.find(0)
+    users.first()
   end
 end
