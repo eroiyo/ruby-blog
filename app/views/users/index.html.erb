@@ -7,59 +7,14 @@
     <title>Users List</title>
 </head>
 <body>
-    <a href="users/1">
-    <div id="user-1" class="user-container">
-      <div id="user-1-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-1-name" class="user-name">Name 1</h2>
-      <h4 id="user-1-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
-        <a href="users/2">
-    <div id="user-2" class="user-container">
-      <div id="user-2-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-2-name" class="user-name">Name 2</h2>
-      <h4 id="user-2-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
-    <a href="users/3">
-    <div id="user-3" class="user-container">
-      <div id="user-3-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-3-name" class="user-name">Name 3</h2>
-      <h4 id="user-3-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
-        <a href="users/4">
-    <div id="user-4" class="user-container">
-      <div id="user-4-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-4-name" class="user-name">Name 4</h2>
-      <h4 id="user-4-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
-        <a href="users/5">
-    <div id="user-5" class="user-container">
-      <div id="user-5-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-5-name" class="user-name">Name 5</h2>
-      <h4 id="user-5-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
-    <a href="users/6">
-    <div id="user-6" class="user-container">
-      <div id="user-6-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h2 id="user-6-name" class="user-name">Name 6</h2>
-      <h4 id="user-6-pq" class="user-pq">number of posts x</h4>
-    </div>
-    </a>
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <%= link_to user_path(user.id) do %>
+      <%= render partial: "user", object: user %>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
 </body>
 </html>

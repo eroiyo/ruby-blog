@@ -1,0 +1,9 @@
+    <li>
+    <div id=<%= "user-" +user.id.to_s  %> class="user-container">
+      <div id=<%= "user-"+ user.id.to_s + "-pfp"  %> class= "user-pfp">
+      profile-pic
+      </div>
+      <h2 id=<%= "user-"+ user.id.to_s + "-name" %> class="user-name"><%= user.name %></h2>
+      <h4 id=<%= "user-"+ user.id.to_s + "-pq"  %> class="user-pq"><%= t('posts_counter', count: user.posts_counter)%></h4>
+    </div>
+    </li>
