@@ -6,3 +6,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+6.times do |i|
+	user = User.create(name: "User ##{i}", bio: "A bio.", posts_counter: 0)
+	3.times do |j|
+		user.posts_counter = user.posts_counter+1
+		post = Post.create(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet", user: user, comments_counter: 0)
+		5.times do |j|
+			post.comments_counter = post.comments_counter+1
+			Comment.create(text: "Comment ##{j}", post: post, user: user)
+		end
+	end
+end
