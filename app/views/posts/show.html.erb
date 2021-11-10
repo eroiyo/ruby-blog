@@ -8,75 +8,14 @@
 </head>
 <body>
     <div class="post">
-      <h1 class="post-title">Title by Author</div>
-      <h4 id="post-1-lk" class="post-lk">comments x, likes y</h4>
+      <h1 class="post-title"><%= @post.title %></div>
+      <h4 id="post-1-lk" class="post-lk">comments <%= @post.comments_counter%>, likes <%= @post.likes_counter%></h4>
       <p class="post-content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat velit at interdum varius. Praesent tempor consequat mi, sed faucibus quam sollicitudin auctor. Nullam tincidunt turpis quis feugiat suscipit. Vivamus non elit sodales, pellentesque quam sit amet, luctus nisl. Phasellus at turpis hendrerit turpis imperdiet porta. Pellentesque consectetur leo arcu, nec egestas nisi commodo et. Suspendisse semper eros nec libero semper suscipit. Donec sed mauris dolor. Ut aliquam, justo ac vulputate interdum, libero metus mollis lorem, in auctor dolor justo eget nisi. Mauris vulputate, tellus a varius convallis, ipsum mi maximus ante, et ornare dolor mauris eu diam. Etiam lobortis velit vestibulum nunc egestas, eget rutrum augue sodales. Phasellus ex justo, ultrices laoreet convallis vitae, luctus vel odio. Phasellus ultricies libero dui, eu semper turpis vulputate suscipit. Aenean ut pellentesque dui, nec semper nisi.
-      Vivamus pulvinar magna et urna mattis ullamcorper. Vestibulum lacinia, quam at eleifend lobortis, lacus risus vehicula libero, at consectetur massa enim id mi. Nam eu sem non sem ultricies tincidunt sit amet eget tortor. Suspendisse et porttitor turpis. Cras placerat dui urna, vel ornare massa mattis a. Maecenas diam risus, lacinia ac elit eu, lacinia interdum mi. Quisque et augue ac elit bibendum imperdiet ut id nunc. Fusce hendrerit tellus nibh. Suspendisse dictum tortor vitae convallis pharetra. Phasellus iaculis scelerisque lectus a lacinia. Ut sit amet mauris eget dui varius finibus in quis augue. Vestibulum elementum purus elit, non consectetur mauris aliquam id. Proin sed odio iaculis, tincidunt erat sit amet, fringilla ligula. Suspendisse fringilla sapien et ante ornare, ut feugiat leo dapibus. Curabitur interdum rhoncus nulla eget mattis. Donec quis metus sed arcu hendrerit placerat in id tortor.
-      Nam consequat sapien sed felis dapibus, et cursus diam molestie. Suspendisse potenti. Aenean fringilla sed ipsum non mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque lorem libero, hendrerit vel turpis a, varius rhoncus neque. Ut porttitor lorem erat, dapibus eleifend leo volutpat et. Aenean ultricies velit iaculis nisl vulputate, lacinia ornare nibh consequat. Sed ut finibus justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      <%= @post.text %>
       </p>
     </div>
     <ul class="comment-section" id="comment-section">
-    <li>
-      <div>
-        <h5 class="commenter" id="commenter-1">username</h5>
-        <p class="comment" id="comment-1">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-2">username</h5>
-        <p class="comment" id="comment-2">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-3">username</h5>
-        <p class="comment" id="comment-3">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-4">username</h5>
-        <p class="comment" id="comment-4">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-5">username</h5>
-        <p class="comment" id="comment-5">comment </p>
-        </div>
-    </li>
-        <li>
-      <div>
-        <h5 class="commenter" id="commenter-6">username</h5>
-        <p class="comment" id="comment-6">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-7">username</h5>
-        <p class="comment" id="comment-7">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-8">username</h5>
-        <p class="comment" id="comment-8">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-9">username</h5>
-        <p class="comment" id="comment-9">comment </p>
-      </div>
-      </li>
-      <li>
-            <div>
-        <h5 class="commenter" id="commenter-10">username</h5>
-        <p class="comment" id="comment-10">comment </p>
-        </div>
-    </li>
+    <%= render partial: "shared/comment", collection: @comments %>
     </ul>
 </body>
 </html>
