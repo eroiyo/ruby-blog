@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-</head>
-<body>
+<%= render partial: "shared/header" %>
 <%= render @user %>
 <% if @user.bio.present? %>
 	<div class="bio-section">
@@ -18,5 +10,3 @@
 <a href=<%= @user.id.to_s+"/posts" %>>
 <button class="button is-small">See all post</button>
 </a>
-</body>
-</html>

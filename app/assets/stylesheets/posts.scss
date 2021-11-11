@@ -24,3 +24,36 @@ a {
   padding: 20px 20px;
   margin-top: 30px;
 }
+
+.comment-form {
+  background-color: orange;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.comment-form > * {
+  height: 25%;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.do-comment {
+  display: inline;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.submit {
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
