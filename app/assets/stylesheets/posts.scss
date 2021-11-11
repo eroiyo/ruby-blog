@@ -1,3 +1,26 @@
-// Place all the styles related to the Post controller here.
+// Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.post-container {
+  background-color: gray;
+  margin-top: 50px;
+  height: 150px;
+  padding: 20px 20px;
+}
+
+.post-lk {
+  margin-left: 82.5%;
+}
+
+.post {
+  background-color: gray;
+  min-height: 350px;
+  padding: 20px 20px;
+  margin-top: 30px;
+}

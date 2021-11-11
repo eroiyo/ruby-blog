@@ -7,49 +7,16 @@
     <title>User Profile</title>
 </head>
 <body>
-    <div id="user-main" class="user-container">
-      <div id="user-main-pfp" class= "user-pfp">
-      profile-pic
-      </div>
-      <h1 id="user-main-name" class="user-name">Name</h1>
-      <h4 id="user-main-pq" class="user-pq">number of posts x</h4>
-    </div>
-    <div clas="bio-section">
-    <h2>Bio</h2 class="bio-title">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mi mauris,
-     vestibulum at magna id, malesuada euismod ante. Nam id lorem ut massa fermentum 
-     porttitor. Cras risus ex, efficitur et dignissim sed, cursus sed velit. Curabitur
-      tristique nisl et quam luctus, at facilisis erat vestibulum. Pellentesque habitant
-       morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam sit
-        amet lacus dignissim ante congue volutpat. Suspendisse mi mauris, lacinia vel
-         cursus ut, ullamcorper placerat odio. Phasellus condimentum non turpis non
-          blandit. Curabitur elementum dolor orci, at dictum ante facilisis ac. Aenean 
-          venenatis vitae enim quis elementum. Phasellus tempor mi eget felis cursus, 
-          commodo fermentum sem ullamcorper. Donec vel mi arcu. Vivamus maximus ex ut 
-          lorem semper, ac luctus lectus mattis. Pellentesque habitant morbi tristique
-           senectus et netus et malesuada fames ac turpis egestas. Morbi et pretium elit.
-            Quisque mattis at tortor vel iaculis.</p class="bio-content">
-    </div>
-    <a href="sample/posts/1">
-    <div id="post-1" class="post-container">
-      <h2 id="post-1-name" class="post-name">Title 1</h2>
-      <p id="post-1-summary">
-      Lorem ipsum dolor sit amet
-      </p> 
-      <h4 id="post-1-lk" class="post-lk">comments x, likes y</h4>
-    </div>
-    </a>
-        <a href="sample/posts/2">
-    <div id="post-2" class="post-container">
-      <h2 id="post-2-name" class="post-name">Title 2</h2>
-      <p id="post-2-summary">
-      Lorem ipsum dolor sit amet
-      </p> 
-      <h4 id="post-2-lk" class="post-lk">comments x, likes y</h4>
-    </div>
-    </a>
-    <a href="sample/posts/">
-        <button type="button">See all post</button>
-    </a>
+<%= render @user %>
+<% if @user.bio.present? %>
+	<div class="bio-section">
+	  <h2 class="bio-title">Bio</h2>
+	  <p><%= @user.bio %></p>
+  </div>
+  <%= render partial: "posts/post", collection: @posts %>
+<% end %>
+<a href=<%= @user.id.to_s+"/posts" %>>
+<button class="button is-small">See all post</button>
+</a>
 </body>
 </html>

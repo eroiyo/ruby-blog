@@ -6,3 +6,43 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.user-container {
+  background-color: darkgrey;
+  display: flex;
+  margin-top: 50px;
+  height: 150px;
+}
+
+.user-pq {
+  margin-top: 120px;
+  width: 25%;
+}
+
+.user-pfp {
+  width: 25%;
+}
+
+.user-name {
+  margin-top: 62.5px;
+  width: 50%;
+}
+
+.panel {
+  width: 50%;
+  height: 60%;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+}
+
+.bio-section {
+  margin-top: 20px;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  height: 200px;
+}
