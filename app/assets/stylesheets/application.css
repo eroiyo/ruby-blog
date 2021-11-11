@@ -41,3 +41,11 @@ ul {
   text-decoration: none;
   list-style-type: none;
 }
+
+.comment-section {
+  padding-left: 0px;
+  margin-top: 10px;
+  background-color: darkgrey;
+  padding: 20px 20px;
+}
+

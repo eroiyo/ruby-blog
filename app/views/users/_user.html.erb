@@ -1,6 +1,8 @@
    <div id=<%= "user-" +user.id.to_s  %> class="user-container">
       <div id=<%= "user-"+ user.id.to_s + "-pfp"  %> class= "user-pfp">
-      <img src=<%= get_photo(user) %> alt="profile picture" >
+      <div class="panel">
+      <img src=<%= get_photo(user) %> class="profile-picture" alt="profile picture" >
+      </div>
       </div>
       <h2 id=<%= "user-"+ user.id.to_s + "-name" %> class="user-name"><%= user.name %></h2>
       <h4 id=<%= "user-"+ user.id.to_s + "-pq"  %> class="user-pq">numbers of posts: <%= user.posts_counter %></h4>
