@@ -6,3 +6,27 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.user-container {
+  background-color: darkgrey;
+  display: flex;
+  margin-top: 50px;
+  height: 150px;
+}
+
+.user-pq {
+  margin-top: 120px;
+}
+
+.user-pfp {
+  width:25%;
+}
+
+.user-name {
+  margin-top: 62.5px;
+  width: 50%;
+}
+
+.user-pq{
+  width: 25%;
+}
