@@ -57,3 +57,75 @@ a {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
+textarea {
+  resize: none;
+}
+
+.post-form {
+ display: flex;
+ flex-direction: column;
+ background-color: gray;
+ min-height: 350px;
+ padding: 20px 20px;
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+
+label {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+#title {
+  height: 25px;
+}
+
+#text {
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.two-options{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.dobule-left {
+  width: 25%;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.dobule-right {
+  width: 25%;
+  margin-right: 15%;
+  margin-left: 10%;
+  z-index: 20;
+  width: 100%;
+  height: 30px;
+  background-color: red;
+  z-index: -1;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.go-back {
+  width: 100%;
+  height: 30px;
+  background-color: red;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}

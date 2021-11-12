@@ -1,0 +1,13 @@
+    <%= form_with model: @post, class: "post-form", url: '/create' do |form| %>
+      <h1 class="do-post">Write an Post: </h1>
+      <%= form.label :title, 'Title' %>
+      <%= form.text_field :title %>
+      <%= form.label :text, 'Content' %>
+      <%= form.text_area :text %>
+      <div class="two-options">
+      <%= form.submit "Submit", class: "submit dobule-left" %>
+        <a class="dobule-right" href = "javascript:history.back()">
+        Go Back
+        </a>
+      </div>
+    <% end %>

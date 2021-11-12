@@ -13,4 +13,11 @@ class PostsController < ApplicationController
     @comments = @post.comments.all
     @comment.user_id = current_user.id
   end
+
+  def create
+    @post = Post.new
+    @post.user_id = current_user.id
+    @post.likes_counter = 0
+    @post.comments_counter = 0
+  end
 end
