@@ -2,11 +2,14 @@
 
 class PostsController < ApplicationController
   def index
+    @like = Like.new
+    @current_user = current_user
     @user = User.find(params[:id])
-    @posts = @user.recent_posts
+    @posts = @user.posts
   end
 
   def show
+    @like = Like.new
     @current_user = current_user
     @comment = Comment.new
     @user = User.find(params[:user_id])
