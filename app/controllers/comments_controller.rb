@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
         text = temp[:text]
         @comment.text = text
         user = current_user
-        user.id
         @comment.user_id = user.id
         @comment.post_id = params[:post_id]
         

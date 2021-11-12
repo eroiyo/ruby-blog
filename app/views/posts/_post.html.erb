@@ -3,5 +3,6 @@
   <h2 id=<%="post-"+post.id.to_s+"-name" %> class="post-name"><%= post.title %></h2>
   </a>
     <p id=<%="post-"+post.id.to_s+"-summary" %> class = "post-summary"><%= post.text %></p>
-     <h4 id="post-1-lk" class="post-lk">comments <%= post.comments_counter %>, likes <%= post.likes_counter %></h4>
+    <h4 id=<%="post-"+post.id.to_s+"-author" %> class="post-author">Author: <%= post.user.name %></h4>
+     <h4 id=<%="post-"+post.id.to_s+"-lk" %> class="post-lk">comments <%= post.comments_counter %>, likes <%= post.likes_counter %></h4>
 </div>
