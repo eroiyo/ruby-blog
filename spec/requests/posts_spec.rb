@@ -15,7 +15,7 @@ describe 'Posts GET #index', type: :request do
 
   it 'should include correct placeholder text' do
     get '/users/1/posts'
-    expect(response.body).to include('User Post List')
+    expect(response.body).to include('likes')
   end
 end
 
@@ -32,6 +32,6 @@ describe 'Posts GET #show', type: :request do
 
   it 'should include correct placeholder text' do
     get '/users/1/posts/1'
-    expect(response.body).to include('Title by Author')
+    expect(response.body).to include('Comments Section:')
   end
 end
