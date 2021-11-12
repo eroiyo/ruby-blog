@@ -29,15 +29,12 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     user = current_user
     @post.user_id = user.id
-    temp =params[:post]
+    temp = params[:post]
     text = temp[:text]
     title = temp[:title]
     @post.text = text
     @post.title = title
-    
-    if @post.save
-        redirect_to("/users/"+(user.id.to_s)+"/posts/"+@post.id.to_s)
-    end
+
+    redirect_to("/users/#{user.id}/posts/#{@post.id}") if @post.save
   end
-  
 end
