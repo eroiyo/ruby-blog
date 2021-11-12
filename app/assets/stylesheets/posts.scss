@@ -10,11 +10,15 @@ a {
 .post-container {
   background-color: gray;
   margin-top: 50px;
-  height: 150px;
+  min-height: 230px;
   padding: 20px 20px;
 }
 
 .post-lk {
+  margin-left: 82.5%;
+}
+
+.post-author {
   margin-left: 82.5%;
 }
 
@@ -23,4 +27,120 @@ a {
   min-height: 350px;
   padding: 20px 20px;
   margin-top: 30px;
+}
+
+.post-content {
+  margin-bottom: 100px;
+}
+
+.comment-form {
+  background-color: orange;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.comment-form > * {
+  height: 25%;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.do-comment {
+  display: inline;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.submit {
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  min-height: 350px;
+  padding: 20px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+label {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+#post_title {
+  height: 25px;
+}
+
+#post_text {
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.two-options {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.dobule-left {
+  width: 25%;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.dobule-right {
+  display: flex;
+  width: 25%;
+  margin-right: 15%;
+  margin-left: 10%;
+  z-index: 200;
+}
+
+.go-back {
+  width: 100%;
+  height: 15px;
+  background-color: red;
+  z-index: -5;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.likeornot {
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 10%;
+}
+
+.dislike {
+  background-color: red;
 }
