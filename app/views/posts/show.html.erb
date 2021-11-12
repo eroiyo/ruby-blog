@@ -6,7 +6,19 @@
       <p class="post-content">
       <%= @post.text %>
       </p>
+          <% if !@post.likes.exists?(user_id: [@current_user.id]) %>
+    <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
+    <%= hidden_field_tag(:post_id, @post.id) %>
+    <%= form.submit "Like", class: "likeornot" %>
+    <% end %>
+    <% else %>
+    <%= form_with model: @like, class: "like-form", url: '/like/delete' do |form| %>
+    <%= hidden_field_tag(:post_id, @post.id) %>
+    <%= form.submit "Dislike", class: "likeornot dislike" %>
+    <% end %>
+    <% end %>
     </div>
+    
     <ul class="comment-section" id="comment-section">
     <li>Comments Section:</li>
     <%= render partial: "shared/comment", collection: @comments %>

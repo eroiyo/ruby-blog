@@ -7,6 +7,6 @@
   </div>
   <%= render partial: "posts/post", collection: @posts %>
 <% end %>
-<a href=<%= @user.id.to_s+"/posts" %>>
+<a href=<%= (request.original_url) +("/posts") %>>
 <button class="button is-small">See all post</button>
 </a>
