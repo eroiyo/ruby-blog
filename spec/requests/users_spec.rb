@@ -15,7 +15,7 @@ describe 'Users GET #index', type: :request do
 
   it 'should include correct placeholder text' do
     get '/'
-    expect(response.body).to include('Users List')
+    expect(response.body).to include('New Post')
   end
 end
 
@@ -32,6 +32,6 @@ describe 'Users GET #show', type: :request do
 
   it 'should include correct placeholder text' do
     get '/users/1'
-    expect(response.body).to include('User Profile')
+    expect(response.body).to include('numbers of posts:')
   end
 end
