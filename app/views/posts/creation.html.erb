@@ -1,14 +1,14 @@
     <%= form_with model: @post, class: "post-form", url: '/create' do |form| %>
       <h1 class="do-post">Write an Post: </h1>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= form.label :title, 'Title' %>
       <%= form.text_field :title %>
       <%= form.label :text, 'Content' %>
       <%= form.text_area :text %>
       <div class="two-options">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= form.submit "Submit", class: "submit dobule-left" %>
-      <a class="dobule-right"   href= javascript:history.back()>
+      <a class="dobule-right -a"   href= javascript:history.back()>
       <div class="go-back">Go Back</div>
       </a>
       </div>

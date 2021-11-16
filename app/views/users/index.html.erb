@@ -2,7 +2,7 @@
 <ul class="unique">
   <% @users.each do |user| %>
   <li>
-  <a href=<%= "users/"+user.id.to_s %>>
+  <a href=<%= "users/"+user.id.to_s %> class="-a">
     <%= render partial: "user", object: user %>
     </a>
   </li>
