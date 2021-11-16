@@ -5,6 +5,8 @@
       <%= form.label :text, 'Content' %>
       <%= form.text_area :text %>
       <div class="two-options">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= form.submit "Submit", class: "submit dobule-left" %>
       <a class="dobule-right"   href= javascript:history.back()>
       <div class="go-back">Go Back</div>

@@ -13,7 +13,6 @@ class User < ApplicationRecord
 
   before_save :set_default
 
-  protected
 
   def set_default
     self.posts_counter = 0 unless self.posts_counter
