@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id/posts', to: 'posts#index'
   get '/users/:user_id/posts/:id', to: 'posts#show'
   post '/users/:poster_id/posts/:post_id/create', to: 'comments#create'
+  patch '/comment/delete', to: 'comments#delete'
   get '/new_post', to: 'posts#creation'
   post '/create', to: 'posts#create'
   post '/like/create', to: 'likes#create'
