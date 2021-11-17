@@ -165,6 +165,15 @@ ul {
   align-items: center;
 }
 
-.devise-form > form > input[type=input] {
-
+.devise-form > form > input[type=submit] {
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
