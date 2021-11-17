@@ -1,3 +1,4 @@
+<div class="devise-form">
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, class: "post-form", url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -7,10 +8,9 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+  <%= render "devise/shared/links" %>
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", class: "submit" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
