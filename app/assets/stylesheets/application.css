@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
 }
 
-.-a{
+.-a {
   text-decoration: none;
   color: black;
 }
@@ -74,7 +74,6 @@ ul {
   margin-bottom: 20px;
 }
 
-
 .logo {
   margin: 0;
   font-size: 1.45em;
@@ -89,7 +88,6 @@ ul {
 .logo a,
 .main-nav input,
 .main-nav a {
-  background-color: none;
   padding: 10px 15px;
   text-transform: uppercase;
   text-align: center;
@@ -141,7 +139,6 @@ ul {
   flex-direction: row;
   font-family: "Montserrat", sans-serif;
 }
-
 
 .devise-form {
   width: 27%;
