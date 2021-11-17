@@ -13,9 +13,8 @@ class User < ApplicationRecord
 
   before_save :set_default
 
-
   def set_default
-    self.posts_counter = 0 unless self.posts_counter
+    self.posts_counter = 0 unless posts_counter
   end
 
   def recent_posts(limit = 3)
