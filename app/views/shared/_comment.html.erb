@@ -3,8 +3,10 @@
 <p><%= comment.user.name %></p>
 <p><%= comment.text %></p>
 </div>
+<% if can? :edit, comment %>
 <%= form_with model: comment, class: "comment-delete", url: '/comment/delete' do |form| %>
     <%= hidden_field_tag(:comment_id, comment.id) %>
     <%= form.submit "Delete", class: "comment-delete" %>
     <% end %>
+<%end%>
 </li>

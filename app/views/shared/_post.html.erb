@@ -1,4 +1,6 @@
 <div id=<%="post-"+post.id.to_s %> class="post-container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 <a href =<%= request.original_url+"/"+post.id.to_s %> class="-a">
   <h2 id=<%="post-"+post.id.to_s+"-name" %> class="post-name"><%= post.title %></h2>
   </a>

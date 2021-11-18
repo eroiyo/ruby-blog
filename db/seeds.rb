@@ -6,6 +6,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.new
+user.name = "administrator"
+user.bio = "administrator Bio"
+user.posts_counter = 0
+user.email= "Admin@example.com"
+user.password  = "administrator"
+user.role = "admin"
+user.skip_confirmation!
+user.save!
 6.times do |i|
 	user = User.new
 	user.name = "User ##{i+1}"
@@ -13,6 +22,7 @@
 	user.posts_counter = 0
 	user.email= "test#{i+1}@example.com"
 	user.password  = "taawktljasktlw4aaglj"
+	user.skip_confirmation!
 	user.save!
 	3.times do |y|
 		post = Post.create(title: "Post ##{y+1} of User##{i+1}", text: "Lorem Ipsum Dolor Sit Amet", user: user, comments_counter: 0, likes_counter:0,)
