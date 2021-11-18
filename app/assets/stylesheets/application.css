@@ -191,3 +191,22 @@ ul {
   border: none;
   padding: 3px 8px;
 }
+
+.post-delete {
+  margin-left: 80%;
+  margin-right: 0;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 20%;
+}
+
+.two-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 100%;
+}
