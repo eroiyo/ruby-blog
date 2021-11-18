@@ -2,7 +2,7 @@
 		<h1 class="logo"><a href="/">Blog</a></h1>
       <ul class="main-nav">
           <li><a href="/new_post">New Post</a></li>
-          <li><a href= <%= (request.base_url) +"/users/" +@current_user.id.to_s %>>My Profile</a></li>
-          <li><a>Logout</a></li>
+          <li><a href= <%= (request.base_url) +"/users/" +@current_user.id.to_s %>><%=+@current_user.name %></a></li>
+          <li><%= button_to "Logout", destroy_user_session_path, method: :delete  %></li>
       </ul>
 	</header> 

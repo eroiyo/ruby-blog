@@ -26,6 +26,11 @@ body {
   overflow-x: hidden;
 }
 
+.-a {
+  text-decoration: none;
+  color: black;
+}
+
 .unique {
   width: 100%;
 }
@@ -69,10 +74,6 @@ ul {
   margin-bottom: 20px;
 }
 
-a {
-  text-decoration: none;
-}
-
 .logo {
   margin: 0;
   font-size: 1.45em;
@@ -85,11 +86,14 @@ a {
 }
 
 .logo a,
+.main-nav input,
 .main-nav a {
   padding: 10px 15px;
   text-transform: uppercase;
   text-align: center;
   display: block;
+  text-decoration: none;
+  color: black;
 }
 
 .main-nav a {
@@ -98,6 +102,16 @@ a {
 }
 
 .main-nav a:hover {
+  color: #718daa;
+}
+
+.main-nav input {
+  color: #34495e;
+  font-size: 0.99em;
+  border: none;
+}
+
+.main-nav input:hover {
   color: #718daa;
 }
 
@@ -124,4 +138,39 @@ a {
   display: flex;
   flex-direction: row;
   font-family: "Montserrat", sans-serif;
+}
+
+.devise-form {
+  width: 27%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  min-height: 350px;
+  padding: 20px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-form > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-form > form > input[type=submit] {
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
 }

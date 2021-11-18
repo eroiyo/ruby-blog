@@ -1,5 +1,5 @@
 <div id=<%="post-"+post.id.to_s %> class="post-container">
-<a href =<%= request.original_url+"/"+post.id.to_s %>>
+<a href =<%= request.original_url+"/"+post.id.to_s %> class="-a">
   <h2 id=<%="post-"+post.id.to_s+"-name" %> class="post-name"><%= post.title %></h2>
   </a>
     <p id=<%="post-"+post.id.to_s+"-summary" %> class = "post-summary"><%= post.text %></p>

@@ -1,12 +1,14 @@
 <%= render partial: "shared/header" %>
 <%= render @user %>
-<% if @user.bio.present? %>
 	<div class="bio-section">
 	  <h2 class="bio-title">Bio</h2>
+	  <% if @user.bio.present? %>
 	  <p><%= @user.bio %></p>
+	  <% else %>
+	  <p>no bio include</p>
+	  <% end %>
   </div>
   <%= render partial: "posts/post", collection: @posts %>
-<% end %>
-<a href=<%= (request.original_url) +("/posts") %>>
+<a href=<%= (request.original_url) +("/posts") %> class="-a">
 <button class="button is-small">See all post</button>
 </a>
