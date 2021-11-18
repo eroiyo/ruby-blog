@@ -39,7 +39,6 @@ class PostsController < ApplicationController
   end
 
   def delete
-    user = current_user
     post_id = params[:post_id]
     post = Post.find(post_id)
     poster_id = post.user_id
