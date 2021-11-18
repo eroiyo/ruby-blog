@@ -6,7 +6,7 @@
   </a>
     <p id=<%="post-"+post.id.to_s+"-summary" %> class = "post-summary"><%= post.text %></p>
     <h4 id=<%="post-"+post.id.to_s+"-author" %> class="post-author">Author: <%= post.user.name %></h4>
-     <h4 id="post-1-lk" class="post-lk">comments <%= post.comments_counter %>, likes <%= post.likes_counter %></h4>
+     <h4 id="post-1-lk" class="post-lk">comments <%= post.comments.size %>, likes <%= post.likes.size %></h4>
     <% if !post.likes.exists?(user_id: [@current_user.id]) %>
     <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
     <%= hidden_field_tag(:post_id, post.id) %>
