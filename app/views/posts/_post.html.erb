@@ -9,6 +9,7 @@
     <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
     <%= hidden_field_tag(:post_id, post.id) %>
     <%= form.submit "Like", class: "likeornot" %>
+    
     <% end %>
     <% else %>
     <%= form_with model: @like, class: "like-form", url: '/like/delete' do |form| %>
