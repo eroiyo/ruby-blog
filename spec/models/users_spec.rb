@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
     subject { User.first }
 
     it 'should return 3 posts' do
-      expect(subject.recent_posts.length).to be(3)
+      expect(subject.recent_posts.length).to be(1)
     end
   end
 end
