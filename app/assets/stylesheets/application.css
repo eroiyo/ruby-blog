@@ -176,10 +176,10 @@ ul {
 }
 
 .comment {
-  display: flex
+  display: flex;
 }
 
-.comment-inf{
+.comment-inf {
   width: 50%;
   margin-right: 20%;
 }
