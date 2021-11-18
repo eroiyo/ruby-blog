@@ -15,13 +15,12 @@ class CommentsController < ApplicationController
   end
 
   def delete
-    user = current_user
     comment_id = params[:comment_id]
     comment = Comment.find(comment_id)
     post = Post.find(comment.post_id)
     if can? :destroy, comment
-    Comment.delete_by(id: comment_id)
-    post.save
+      Comment.delete_by(id: comment_id)
+      post.save
     end
     redirect_to(request.env['HTTP_REFERER'])
   end
