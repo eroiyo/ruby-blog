@@ -2,10 +2,11 @@
     <div class="post">
       <h1 class="post-title"><%= @post.title %>
       <h4 id=<%="post-"+@post.id.to_s+"-author" %> class="post-author">Author: <%= @post.user.name %></h4>
-      <h4 id="post-1-lk" class="post-lk">comments <%= @post.comments.size%>, likes <%= @post.likes.size%></h4>
+      <h4 id="post-1-lk" class="post-lk">comments <%= @post.comments_counter%>, likes <%= @post.likes_counter%></h4>
       <p class="post-content">
       <%= @post.text %>
       </p>
+      <div class="two-options">
           <% if !@post.likes.exists?(user_id: [@current_user.id]) %>
     <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
     <%= hidden_field_tag(:post_id, @post.id) %>
@@ -17,6 +18,11 @@
     <%= form.submit "Dislike", class: "likeornot dislike" %>
     <% end %>
     <% end %>
+    <%= form_with model: @post, class: "delete-post-form", url: '/post/delete' do |form| %>
+    <%= hidden_field_tag(:post_id, @post.id) %>
+    <%= form.submit "Delete Post", class: "likeornot dislike post-delete" %>
+    <% end %>
+    </div>
     </div>
     
     <ul class="comment-section" id="comment-section">
