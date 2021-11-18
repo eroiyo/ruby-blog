@@ -18,9 +18,11 @@
     <%= form.submit "Dislike", class: "likeornot dislike" %>
     <% end %>
     <% end %>
+    <% if can? :destroy, @post %>
     <%= form_with model: @post, class: "delete-post-form", url: '/post/delete' do |form| %>
     <%= hidden_field_tag(:post_id, @post.id) %>
     <%= form.submit "Delete Post", class: "likeornot dislike post-delete" %>
+    <% end %>
     <% end %>
     </div>
     </div>
