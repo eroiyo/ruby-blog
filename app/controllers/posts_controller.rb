@@ -42,14 +42,16 @@ class PostsController < ApplicationController
     user = current_user
     post_id = params[:post_id]
     post = Post.find(post_id)
-    poster_id = post.user_id
+    poster = User.find(post.user_id)
+
     if can? :destroy, post
     post.comments.each do |comment|
-      Comment.delete_by(id: comment.id)
+    many = Comment.delete_by(id: comment.id)
+    poster.post
     end
     Post.delete_by(id: post_id)
     end
-    redirect_to("/users/#{poster_id}")
+    redirect_to("/users/#{poster.id}")
   end
 
 end
