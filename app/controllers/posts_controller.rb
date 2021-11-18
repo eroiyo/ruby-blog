@@ -37,4 +37,17 @@ class PostsController < ApplicationController
 
     redirect_to("/users/#{user.id}/posts/#{@post.id}") if @post.save
   end
+
+  def delete
+    post_id = params[:post_id]
+    post = Post.find(post_id)
+    poster_id = post.user_id
+    if can? :destroy, post
+      post.comments.each do |comment|
+        Comment.delete_by(id: comment.id)
+      end
+      Post.delete_by(id: post_id)
+    end
+    redirect_to("/users/#{poster_id}")
+  end
 end

@@ -6,6 +6,7 @@
       <p class="post-content">
       <%= @post.text %>
       </p>
+      <div class="two-options">
           <% if !@post.likes.exists?(user_id: [@current_user.id]) %>
     <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
     <%= hidden_field_tag(:post_id, @post.id) %>
@@ -17,6 +18,13 @@
     <%= form.submit "Dislike", class: "likeornot dislike" %>
     <% end %>
     <% end %>
+    <% if can? :destroy, @post %>
+    <%= form_with model: @post, class: "delete-post-form", url: '/post/delete' do |form| %>
+    <%= hidden_field_tag(:post_id, @post.id) %>
+    <%= form.submit "Delete Post", class: "likeornot dislike post-delete" %>
+    <% end %>
+    <% end %>
+    </div>
     </div>
     
     <ul class="comment-section" id="comment-section">
@@ -26,5 +34,6 @@
     <%= form_with model: @comment, class: "comment-form", url: @post.id.to_s+'/create' do |form| %>
     <h3 class="do-comment">Do a comment: </h3>
       <%= form.text_field :text%>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= form.submit "Submit", class: "submit" %>
     <% end %>

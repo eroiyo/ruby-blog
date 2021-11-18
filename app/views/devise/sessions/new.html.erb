@@ -1,4 +1,6 @@
 <div class="devise-form">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 <h1>Log in</h1>
 <%= form_for(resource, as: resource_name, class: "post-form", url: session_path(resource_name)) do |f| %>
   <div class="field">

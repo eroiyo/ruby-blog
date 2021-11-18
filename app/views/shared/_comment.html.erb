@@ -1,6 +1,12 @@
 <li class="comment" id=<%= "comment-"+comment.id.to_s %>>
-<div>
+<div class="comment-inf">
 <p><%= comment.user.name %></p>
 <p><%= comment.text %></p>
-<div>
+</div>
+<% if can? :destroy, comment %>
+<%= form_with model: comment, class: "comment-delete", url: '/comment/delete' do |form| %>
+    <%= hidden_field_tag(:comment_id, comment.id) %>
+    <%= form.submit "Delete Comment", class: "comment-delete" %>
+    <% end %>
+<%end%>
 </li>

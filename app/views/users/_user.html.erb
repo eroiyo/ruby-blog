@@ -5,5 +5,5 @@
       </div>
       </div>
       <h2 id=<%= "user-"+ user.id.to_s + "-name" %> class="user-name"><%= user.name %></h2>
-      <h4 id=<%= "user-"+ user.id.to_s + "-pq"  %> class="user-pq">numbers of posts: <%= user.posts_counter %></h4>
+      <h4 id=<%= "user-"+ user.id.to_s + "-pq"  %> class="user-pq">numbers of posts: <%= user.posts.size %></h4>
     </div>
