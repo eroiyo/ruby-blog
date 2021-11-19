@@ -29,6 +29,12 @@ describe "the signin process", type: :feature do
         within("#new_user") do
             a = fill_in 'user_email', with: 'test11@example.com'
             b = fill_in 'user_password', with: 'taawktljasktlw4aaglj'
+            if a != nil
+              a = true
+            end
+            if b != nil
+              b = true
+            end
         end
         User.delete(@user.id)
         expect(a && b).to eq(true)

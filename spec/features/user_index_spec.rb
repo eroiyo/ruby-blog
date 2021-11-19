@@ -82,9 +82,8 @@ describe "The User Index process", type: :feature do
         e = nil
         flag = true
         for i in User.all
-            e
+            e = nil
             e = find("#user-#{i.id}-pfp")
-            expect(page).to have_content "numbers of posts: #{i.posts.size}"
             if e == nil
                 flag = false
                 break
