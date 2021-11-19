@@ -2,6 +2,24 @@
 
 > This blog have been created with ruby on rails, count with logging, comments, profiles, and posts creation system
 
+## Built With
+
+- Ruby on Rails
+- PostgreSQL
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Rails & Postgres](https://www.howtoforge.com/tutorial/ubuntu-ruby-on-rails/?fbclid=IwAR3G0lCOxctwwOCAXmJKAma8p-IciYv2qwwRUyOX-pULaB_7lmrGgMMK8G4)
+
+### Setup
+
+- Make sure you have Ruby on Rails set up properly on your computer
+- Clone or download this repo on your machine
 
 ## Authors
 
