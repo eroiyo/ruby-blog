@@ -1,24 +1,30 @@
-# README
+# Ruby on rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This blog have been created with ruby on rails, count with logging, comments, profiles, and posts creation system
 
-Things you may want to cover:
 
-* Ruby version
+## Authors
 
-* System dependencies
+👤 **Carlos Arturo Ortegega Guanipa**
 
-* Configuration
+- GitHub: [@githubhandle](https://github.com/eroiyo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/carlos-arturo-ortega-guanipa/)
 
-* Database creation
 
-* Database initialization
+## 🤝 Contributing
 
-* How to run the test suite
+Contributions, issues, and feature requests are welcome!
 
-* Services (job queues, cache servers, search engines, etc.)
+Feel free to check the [issues page](../../issues/).
 
-* Deployment instructions
+## Show your support
 
-* ...
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+
