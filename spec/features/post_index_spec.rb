@@ -1,5 +1,3 @@
-
-
 describe "The User Show Process", type: :feature do
     before :each do
         @user = User.new
@@ -40,6 +38,9 @@ describe "The User Show Process", type: :feature do
 
         3.times do |y|
             post = Post.create(title: "Post ##{y+1} of User#1", text: "Lorem Ipsum Dolor Sit Amet", user: @user1, comments_counter: 0, likes_counter:0,)
+            5.times do |j|
+                Comment.create(text: "Comment ##{j+1}", post: post, user: @user1)
+            end
         end
 
         visit '/users/sign_in'
@@ -52,8 +53,18 @@ describe "The User Show Process", type: :feature do
     end
 
     it "I can see the username of the user." do
-        visit "/users/#{@user1.id}"
+        visit "/users/#{@user1.id}/posts"
+        Post.destroy_by(user_id: @user1.id)
+        User.delete(@user1.id)
+        User.delete(@user2.id)
+        User.delete(@user3.id)
+        User.delete(@user.id)
         expect(page).to have_content @user1.name
+    end
+
+    it "I can see the number of posts the user have" do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content "numbers of posts: #{@user1.posts.size}"
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
         User.delete(@user2.id)
@@ -61,12 +72,13 @@ describe "The User Show Process", type: :feature do
         User.delete(@user.id)
     end
 
-    it "I can see the user profile pic." do
-        visit "/users/#{@user1.id}"
+    it "I can see the profile picture for the user." do
+        visit "/users/#{@user1.id}/posts"
+        e = nil
+        flag = true
         e = find("#user-#{@user1.id}-pfp")
-        flag = false
-        if e != nil
-            flag = true
+        if e == nil
+            flag = false
         end
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
@@ -76,11 +88,9 @@ describe "The User Show Process", type: :feature do
         expect(flag).to eq(true)
     end
 
-    
-    it "I can see the user profile pic." do
-        visit "/users/#{@user1.id}"
-        expect(page).to have_content "numbers of posts: #{@user1.posts.size}"
-
+    it "I can see a post title of the user." do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content @user1.posts[0].title
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
         User.delete(@user2.id)
@@ -88,10 +98,9 @@ describe "The User Show Process", type: :feature do
         User.delete(@user.id)
     end
 
-    it "I can see the user bio." do
-        visit "/users/#{@user1.id}"
-        expect(page).to have_content @user1.bio
-
+    it "I can see some of the post's body." do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content @user1.posts[0].text
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
         User.delete(@user2.id)
@@ -99,29 +108,45 @@ describe "The User Show Process", type: :feature do
         User.delete(@user.id)
     end
 
-    it "I can see the first 3 post of the user." do
-        visit "/users/#{@user1.id}"
-        a = Post.where(user_id: @user1.id).take(3)
-
+    it "I can see the first comment on a post." do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content @user1.posts[0].comments[0].text
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
         User.delete(@user2.id)
         User.delete(@user3.id)
         User.delete(@user.id)
-        for i in a
-            expect(page).to have_content "#{i.title}"
-        end
     end
 
-    it "I can see a button that lets me view all of a user's posts." do
-        visit "/users/#{@user1.id}"
+    it "I can see how many comments a post has." do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content "comments #{@user1.posts[0].comments.size}"
+        Post.destroy_by(user_id: @user1.id)
+        User.delete(@user1.id)
+        User.delete(@user2.id)
+        User.delete(@user3.id)
+        User.delete(@user.id)
+    end
+
+    it "I can see how many likes a post has." do
+        visit "/users/#{@user1.id}/posts"
+        expect(page).to have_content ", likes #{@user1.posts[0].likes.size}"
+        Post.destroy_by(user_id: @user1.id)
+        User.delete(@user1.id)
+        User.delete(@user2.id)
+        User.delete(@user3.id)
+        User.delete(@user.id)
+    end
+
+    it "I can see a section for pagination if there are more posts than fit on the view." do
+        visit  "/users/#{@user1.id}/posts"
 
         Post.destroy_by(user_id: @user1.id)
         User.delete(@user1.id)
         User.delete(@user2.id)
         User.delete(@user3.id)
         User.delete(@user.id)
-        a = find_button("See all post")
+        a = find("#next-link")
         if a != nil
             a=true
         end
@@ -129,7 +154,7 @@ describe "The User Show Process", type: :feature do
     end
 
     it "If i click on a post, it redirect me to the post page." do
-        visit "/users/#{@user1.id}"
+        visit "/users/#{@user1.id}/posts"
         click_on @user1.posts[0].title
         post = @user1.posts[0].id
         expect(current_path).to eq("/users/#{@user1.id}/posts/#{post}")
@@ -139,29 +164,5 @@ describe "The User Show Process", type: :feature do
         User.delete(@user3.id)
         User.delete(@user.id)
     end
-
-    it "There is a button to see all the posts of a user." do
-        visit "/users/#{@user1.id}"
-        a = find("#next-link")
-        if a != nil
-            a=true
-        end
-        expect(a).to eq(true)
-        Post.destroy_by(user_id: @user1.id)
-        User.delete(@user1.id)
-        User.delete(@user2.id)
-        User.delete(@user3.id)
-        User.delete(@user.id)
-    end
-
-    it "When I click to see all posts, it redirects me to the user's post's index page." do
-        visit "/users/#{@user1.id}"
-        find("#next-link").click
-        expect(current_path).to eq("/users/#{@user1.id}/posts")
-        Post.destroy_by(user_id: @user1.id)
-        User.delete(@user1.id)
-        User.delete(@user2.id)
-        User.delete(@user3.id)
-        User.delete(@user.id)
-    end
+    
 end
