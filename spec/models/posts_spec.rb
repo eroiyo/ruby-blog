@@ -34,12 +34,12 @@ RSpec.describe Post, type: :model do
     end
   end
 
- # describe '#update_counter' do
+  # describe '#update_counter' do
   #  subject { Post.first }
 
-   # it 'should update the user posts counter' do
-   #   subject.update_counter(2)
-   #   expect(subject.user.posts_counter).to be(2)
+  # it 'should update the user posts counter' do
+  #   subject.update_counter(2)
+  #   expect(subject.user.posts_counter).to be(2)
   #  end
- # end
+  # end
 end
