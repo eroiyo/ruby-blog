@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# require 'rails_helper'
+#require 'rails_helper'
 
 # RSpec.describe Comment, type: :model do
 #  describe '#update_counter' do
@@ -11,4 +11,4 @@
 #      expect(subject.post.comments_counter).to be(2)
 #    end
 #  end
-# end
+#end
