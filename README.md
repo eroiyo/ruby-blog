@@ -25,7 +25,7 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Carlos Arturo Ortegega Guanipa**
 
-- GitHub: [@githubhandle](https://github.com/eroiyo)
+- GitHub: [@eroiyo](https://github.com/eroiyo)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/carlos-arturo-ortega-guanipa/)
 
 
