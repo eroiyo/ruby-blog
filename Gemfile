@@ -60,4 +60,5 @@ gem 'cancancan'
 gem 'dotenv-rails'
 gem 'jwt'
 gem 'rack-cors'
+gem 'rswag'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
