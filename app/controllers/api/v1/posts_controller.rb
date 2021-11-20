@@ -12,8 +12,17 @@ module Api
         else
           render json: { message: post.errors.full_messages }, status: 400
         end
-
-        def comment
+      end
+      def comment
+        {
+          comment = Comment.create(post_params)
+          comment.post_id = params[:post_id]
+          if comment.save
+            render json: { comment: post }, status: 200
+          else
+            render json: { message: comment.errors.full_messages }, status: 400
+          end
+        }
       end
       def index
         render json: { Posts: Post.all }
