@@ -3,26 +3,18 @@
 module Api
   module V1
     class PostsController < ApiController
-    skip_before_action :authenticate_user!, only: [:create]
+    skip_before_action :authenticate_user!
 
-      def create
-        user = current_user.posts.create(post_params)
-        if post.save
-          render json: { post: post }, status: 200
-        else
-          render json: { message: post.errors.full_messages }, status: 400
-        end
-      end
       def comment
-        {
-          comment = Comment.create(post_params)
-          comment.post_id = params[:post_id]
-          if comment.save
-            render json: { comment: post }, status: 200
-          else
-            render json: { message: comment.errors.full_messages }, status: 400
-          end
-        }
+        comment = Comment.new
+        comment.text = params[:text]
+        comment.post_id = params[:post_id]
+        comment.user_id = current_user.id
+        if comment.save
+          render json: { comment: comment }, status: 200
+        else
+          render json: { message: comment.errors.full_messages }, status: 400
+        end
       end
       def index
         render json: { Posts: Post.all }

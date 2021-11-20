@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < ApiController
-      skip_before_action :authenticate_user!, only: [:create]
+      skip_before_action :authenticate_user!, only: [:create, :login]
       def create
         user = User.create(user_params)
         if user.save
@@ -15,6 +15,18 @@ module Api
 
       def index
         render json: { Posts: User.all }
+      end
+
+      def login
+        @user = User.find_by_email(params[:email])
+    if @user.valid_password?(params[:password])
+      token = JsonWebToken.encode(user_id: @user.id)
+      time = Time.now + 24.hours.to_i
+      render json: { token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
+                     name: @user.name }, status: :ok
+    else
+      render json: { error: 'unauthorized' }, status: :unauthorized
+    end
       end
 
       private
