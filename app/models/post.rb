@@ -22,4 +22,8 @@ class Post < ApplicationRecord
   def liked?(id)
     users.exists? id
   end
+
+  def as_json(options = {})
+    {:id => self.id, :title => self.title, :text => self.text, :commentsCounter => self.comments.size, :likesCounter => self.likes.size, :author => self.user.name, :created_at => self.created_at, :update_at => self.updated_at}
+  end
 end
