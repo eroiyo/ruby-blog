@@ -21,7 +21,7 @@ class User < ApplicationRecord
     posts.includes(:comments).order('created_at').last(limit)
   end
 
-  def as_json(options = {})
-    {:id => self.id, :name => self.name, :bio => self.bio, :photo => self.photo, :postsCounter => self.posts.size, :created_at => self.created_at, :update_at => self.updated_at}
+  def as_json(_options = {})
+    { id: id, name: name, bio: bio, photo: photo, postsCounter: posts.size, created_at: created_at, update_at: updated_at }
   end
 end

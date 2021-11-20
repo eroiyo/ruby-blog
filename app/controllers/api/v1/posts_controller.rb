@@ -3,7 +3,7 @@
 module Api
   module V1
     class PostsController < ApiController
-    skip_before_action :authenticate_user!
+      skip_before_action :authenticate_user!
 
       def comment
         comment = Comment.new
@@ -16,6 +16,7 @@ module Api
           render json: { message: comment.errors.full_messages }, status: 400
         end
       end
+
       def index
         render json: { Posts: Post.all }
       end

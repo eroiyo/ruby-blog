@@ -23,7 +23,7 @@ class Post < ApplicationRecord
     users.exists? id
   end
 
-  def as_json(options = {})
-    {:id => self.id, :title => self.title, :text => self.text, :commentsCounter => self.comments.size, :likesCounter => self.likes.size, :author => self.user.name, :created_at => self.created_at, :update_at => self.updated_at}
+  def as_json(_options = {})
+    { id: id, title: title, text: text, commentsCounter: comments.size, likesCounter: likes.size, author: user.name, created_at: created_at, update_at: updated_at }
   end
 end
