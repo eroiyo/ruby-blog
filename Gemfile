@@ -58,4 +58,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'cancancan'
 gem 'dotenv-rails'
+gem 'grape'
+gem 'rack-cors'
+gem 'grape-active_model_serializers'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

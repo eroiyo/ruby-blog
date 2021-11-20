@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount API::Base, at: "/"
   devise_for :users
   root to: 'users#index'
   get '/users/:id', to: 'users#show'
